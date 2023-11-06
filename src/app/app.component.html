@@ -14,18 +14,36 @@
       <div class="grid flex-grow-1" style="max-width:1400px;">
 
         <div class="col-12 lg:col-6">
-          <p-accordion [activeIndex]="2">
-            <p-accordionTab header="🧭 Kieskompas">
+          <p-accordion [activeIndex]="0">
+            <p-accordionTab>
+              <ng-template pTemplate="header">
+                <div class="flex align-items-center">
+                  <i class="pi pi-compass mr-2 primary-600"></i>
+                  <span class="vertical-align-middle">Kieskompas</span>
+                </div>
+              </ng-template>
 
               <app-compass-configuration />
 
             </p-accordionTab>
-            <p-accordionTab header="📍 Jouw positie">
+            <p-accordionTab>
+              <ng-template pTemplate="header">
+                <div class="flex align-items-center">
+                  <i class="pi pi-map-marker mr-2 primary-600"></i>
+                  <span class="vertical-align-middle">Jouw locatie</span>
+                </div>
+              </ng-template>
 
               <app-pin-configuration />
 
             </p-accordionTab>
-            <p-accordionTab header="🗳️ Partijen">
+            <p-accordionTab>
+              <ng-template pTemplate="header">
+                <div class="flex align-items-center">
+                  <i class="pi pi-circle mr-2 primary-600"></i>
+                  <span class="vertical-align-middle">Politieke partijen</span>
+                </div>
+              </ng-template>
 
               <app-party-configuration />
 

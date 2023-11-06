@@ -30,11 +30,13 @@
     <label for="flairColour">Cirkelkleur</label>
     <div>
         <p-colorPicker id="flairColour" class="mr-2" [(ngModel)]="compassService.pinFlairColor"></p-colorPicker>
-        <span>{{ compassService.pinFlairColor }}</span>
+        <span class="monospaced">{{ compassService.pinFlairColor }}</span>
     </div>
 </div>
 
 
-<div class="flex flex-row justify-content-end">
-    <p-button label="Reset" [outlined]="true" (onClick)="compassService.resetPin()"></p-button>
+<div class="flex flex-row justify-content-end gap-2">
+    <p-button label="Random" icon="pi pi-arrows-alt" [outlined]="true"
+        (onClick)="compassService.randomizePin()"></p-button>
+    <p-button label="Reset" icon="pi pi-refresh" [outlined]="true" (onClick)="compassService.resetPin()"></p-button>
 </div>

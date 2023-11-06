@@ -56,26 +56,28 @@
         <div>
             <p-colorPicker id="backgroundColour" class="mr-2"
                 [(ngModel)]="compassService.backgroundColor"></p-colorPicker>
-            <span>{{ compassService.backgroundColor }}</span>
+            <span class="monospaced">{{ compassService.backgroundColor }}</span>
         </div>
     </div>
     <div class="field">
         <label for="backgroundColour">Lijnkleur</label>
         <div>
             <p-colorPicker id="backgroundColour" class="mr-2" [(ngModel)]="compassService.lineColor"></p-colorPicker>
-            <span>{{ compassService.lineColor }}</span>
+            <span class="monospaced">{{ compassService.lineColor }}</span>
         </div>
     </div>
     <div class="field">
         <label for="backgroundColour">Tekstkleur</label>
         <div>
             <p-colorPicker id="backgroundColour" class="mr-2" [(ngModel)]="compassService.textColor"></p-colorPicker>
-            <span>{{ compassService.textColor }}</span>
+            <span class="monospaced">{{ compassService.textColor }}</span>
         </div>
     </div>
 </div>
 
 
-<div class="flex flex-row justify-content-end">
-    <p-button label="Reset" [outlined]="true" (onClick)="compassService.resetCompass()"></p-button>
+<div class="flex flex-row justify-content-end gap-2">
+    <p-button label="Random" icon="pi pi-arrows-alt" [outlined]="true"
+        (onClick)="compassService.randomizeCompass()"></p-button>
+    <p-button label="Reset" icon="pi pi-refresh" [outlined]="true" (onClick)="compassService.resetCompass()"></p-button>
 </div>

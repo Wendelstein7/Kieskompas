@@ -55,6 +55,26 @@ export class CompassService {
     this.lineColor = "#999999";
   }
 
+  private randomLabels: string[][] = [['Links', 'Rechts'], ['Progressief', 'Conservatief'], ['Intelligent', 'Niet-intelligent'], ['Rijk', 'Arm'], ['Charmant', 'Oncharmant'], ['Pro-auto', 'Pro-fiets'], ['Religieus', 'Seculair'], ['Saai', 'Interresant'], ['Winnaar', 'Loser']];
+  public randomizeCompass() {
+
+    this.xAxisPos = Math.floor(Math.random() * 100);
+    let labels = this.randomLabels[Math.floor(Math.random() * this.randomLabels.length)];
+    if (Math.random() > 0.5) labels = labels.reverse();
+    this.LeftLabel = labels[0];
+    this.RightLabel = labels[1];
+
+    this.yAxisPos = Math.floor(Math.random() * 100);
+    labels = this.randomLabels[Math.floor(Math.random() * this.randomLabels.length)];
+    if (Math.random() > 0.5) labels = labels.reverse();
+    this.TopLabel = labels[0];
+    this.BottomLabel = labels[1];
+
+    // this.backgroundColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
+    // this.textColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
+    // this.lineColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
+  }
+
   /* Pin */
   public pin: boolean = true;
   public pinX: number = 50;
@@ -70,6 +90,12 @@ export class CompassService {
 
     this.pinFlair = true;
     this.pinFlairColor = "#dfeff8";
+  }
+
+  public randomizePin() {
+    this.pinX = Math.floor(Math.random() * 100);
+    this.pinY = Math.floor(Math.random() * 100);
+    // this.pinFlairColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
   }
 
   /* Parties */
@@ -99,7 +125,7 @@ export class CompassService {
       }
     },
     {
-      name: "Belang van Nedeland",
+      name: "Belang van Nederland",
       abbr: "BVNL",
       logo: this.logoService.BVNL,
       x: 95.0,
@@ -283,4 +309,18 @@ export class CompassService {
       }
     },
   ]
+
+  public resetParties() {
+    this.parties.forEach(party => {
+      if (party.reset)
+        party.reset();
+    });
+  }
+
+  public randomizeParties() {
+    this.parties.forEach(party => {
+      party.x = Math.floor(Math.random() * 100) - 5;
+      party.y = Math.floor(Math.random() * 100) - 5;
+    });
+  }
 }
