@@ -1,0 +1,55 @@
+<p class="mt-0 mb-4">Hier kun je de weergave van het kompas aanpassen, zoals de assen en labels.</p>
+
+<div class="flex flex-row gap-3">
+    <p-inputSwitch [(ngModel)]="compassService.xAxis"></p-inputSwitch>
+    <div class="field flex-grow-1">
+        <label for="xAxisPos">Horizontale lijn</label>
+        <p-slider [(ngModel)]="compassService.xAxisPos" [animate]="true" [disabled]="!compassService.xAxis"
+            id="xAxisPos" [min]="0" [step]="0.5" [max]="100"></p-slider>
+    </div>
+</div>
+
+<div class="flex flex-row gap-3">
+    <p-inputSwitch [(ngModel)]="compassService.yAxis"></p-inputSwitch>
+    <div class="field flex-grow-1">
+        <label for="yAxisPos">Verticale lijn</label>
+        <p-slider [(ngModel)]="compassService.yAxisPos" [animate]="true" [disabled]="!compassService.yAxis"
+            id="yAxisPos" [min]="0" [step]="0.5" [max]="100"></p-slider>
+    </div>
+</div>
+
+<div class="field">
+    <span class="p-input-icon-left">
+        <i class="pi pi-chevron-up"></i>
+        <input pInputText [(ngModel)]="compassService.TopLabel" [disabled]="!compassService.yAxis" id="topLabel"
+            type="text" placeholder="Boven" />
+    </span>
+</div>
+
+<div class="field">
+    <span class="p-input-icon-left">
+        <i class="pi pi-chevron-down"></i>
+        <input pInputText [(ngModel)]="compassService.BottomLabel" [disabled]="!compassService.yAxis" id="bottomLabel"
+            type="text" placeholder="Onder" />
+    </span>
+</div>
+
+<div class="field">
+    <span class="p-input-icon-left">
+        <i class="pi pi-chevron-left"></i>
+        <input pInputText [(ngModel)]="compassService.LeftLabel" [disabled]="!compassService.xAxis" id="leftLabel"
+            type="text" placeholder="Links" />
+    </span>
+</div>
+
+<div class="field">
+    <span class="p-input-icon-left">
+        <i class="pi pi-chevron-right"></i>
+        <input pInputText [(ngModel)]="compassService.RightLabel" [disabled]="!compassService.xAxis" id="rightLabel"
+            type="text" placeholder="Rechts" />
+    </span>
+</div>
+
+<div class="flex flex-row justify-content-end">
+    <p-button label="Reset" [outlined]="true" (onClick)="compassService.resetCompass()"></p-button>
+</div>
