@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { KompasComponent } from './kompas.component';
+import { CompassComponent } from './compass.component';
 
-describe('KompasComponent', () => {
-  let component: KompasComponent;
-  let fixture: ComponentFixture<KompasComponent>;
+describe('CompassComponent', () => {
+  let component: CompassComponent;
+  let fixture: ComponentFixture<CompassComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [KompasComponent]
+      declarations: [CompassComponent]
     });
-    fixture = TestBed.createComponent(KompasComponent);
+    fixture = TestBed.createComponent(CompassComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

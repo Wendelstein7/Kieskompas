@@ -5,10 +5,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 // Components
-import { KompasComponent } from './kompas/kompas.component';
-import { CreditsComponent } from './credits/credits.component';
-import { TitleComponent } from './title/title.component';
+import { CreditsComponent } from './components/credits/credits.component';
+import { TitleComponent } from './components/title/title.component';
 import { CompassConfigurationComponent } from './components/compass-configuration/compass-configuration.component';
+import { CompassComponent } from './components/compass/compass.component';
 
 // Services
 import { CompassService } from './services/compass.service';
@@ -25,10 +25,10 @@ import { InputSwitchModule } from 'primeng/inputswitch';
 @NgModule({
   declarations: [
     AppComponent,
-    KompasComponent,
     CreditsComponent,
     TitleComponent,
-    CompassConfigurationComponent
+    CompassConfigurationComponent,
+    CompassComponent,
   ],
   imports: [
     BrowserModule,

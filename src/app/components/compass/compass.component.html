@@ -1,0 +1,25 @@
+<svg class="surface-0 border-round-lg" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1000 1000">
+    <text *ngIf="compassService.yAxis" font-family="Helvetica, Arial, sans-serif" font-size="28" letter-spacing="2"
+        text-anchor="middle" x="500" y="30" fill="#404040">
+        {{ compassService.TopLabel }}
+    </text>
+    <text *ngIf="compassService.yAxis" font-family="Helvetica, Arial, sans-serif" font-size="28" letter-spacing="2"
+        text-anchor="middle" x="500" y="980" fill="#404040">
+        {{ compassService.BottomLabel }}
+    </text>
+    <text *ngIf="compassService.xAxis" font-family="Helvetica, Arial, sans-serif" font-size="28" letter-spacing="2"
+        text-anchor="middle" transform="rotate(-90 500 500)" x="500" y="30" fill="#404040">
+        {{ compassService.LeftLabel }}
+    </text>
+    <text *ngIf="compassService.xAxis" font-family="Helvetica, Arial, sans-serif" font-size="28" letter-spacing="2"
+        text-anchor="middle" transform="rotate(90 500 500)" x="500" y="30" fill="#404040">
+        {{ compassService.RightLabel }}
+    </text>
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="80%" height="80%" x="10%" y="10%">
+        <line *ngIf="compassService.xAxis" x1="0%" [attr.y1]="compassService.xAxisPos.toString() + '%'" x2="100%"
+            [attr.y2]="compassService.xAxisPos.toString() + '%'" stroke="#999999" stroke-width="3"></line>
+        <line *ngIf="compassService.yAxis" [attr.x1]="compassService.yAxisPos.toString() + '%'" y1="0%"
+            [attr.x2]="compassService.yAxisPos.toString() + '%'" y2="100%" stroke="#999999" stroke-width="3">
+        </line>
+    </svg>
+</svg>
