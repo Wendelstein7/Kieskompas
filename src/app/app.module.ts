@@ -4,14 +4,19 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+
 // Components
 import { CreditsComponent } from './components/credits/credits.component';
 import { TitleComponent } from './components/title/title.component';
-import { CompassConfigurationComponent } from './components/compass-configuration/compass-configuration.component';
+
 import { CompassComponent } from './components/compass/compass.component';
+import { CompassConfigurationComponent } from './components/compass-configuration/compass-configuration.component';
+import { PinConfigurationComponent } from './components/pin-configuration/pin-configuration.component';
+
 
 // Services
 import { CompassService } from './services/compass.service';
+
 
 // PrimeNG Modules
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -29,6 +34,7 @@ import { InputSwitchModule } from 'primeng/inputswitch';
     TitleComponent,
     CompassConfigurationComponent,
     CompassComponent,
+    PinConfigurationComponent,
   ],
   imports: [
     BrowserModule,

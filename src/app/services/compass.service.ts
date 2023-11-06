@@ -33,6 +33,7 @@ export class CompassService {
 
   /* Pin */
   public pin: boolean = true;
+  public pinFlair: boolean = true;
   public pinX: number = 50;
   public pinY: number = 50;
 
