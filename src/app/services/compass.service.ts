@@ -1,12 +1,17 @@
 import { Injectable } from '@angular/core';
 import { LogoService } from './logo.service';
+import { visitAll } from '@angular/compiler';
 
 export interface Party {
   name: string;
   abbr: string;
   logo: string;
+
   x: number;
   y: number;
+  visible: boolean;
+
+  reset?: () => void;
 }
 
 @Injectable({
@@ -75,6 +80,11 @@ export class CompassService {
       logo: this.logoService.BBB,
       x: 49.5,
       y: 66.1,
+      visible: true,
+      reset: () => {
+        this.parties[0].x = 49.5;
+        this.parties[0].y = 66.1;
+      }
     },
     {
       name: "ChristenUnie",
@@ -82,6 +92,11 @@ export class CompassService {
       logo: this.logoService.CU,
       x: 29.1,
       y: 34.5,
+      visible: true,
+      reset: () => {
+        this.parties[1].x = 29.1;
+        this.parties[1].y = 34.5;
+      }
     },
     {
       name: "Belang van Nedeland",
@@ -89,6 +104,11 @@ export class CompassService {
       logo: this.logoService.BVNL,
       x: 95.0,
       y: 89.7,
+      visible: true,
+      reset: () => {
+        this.parties[2].x = 95.0;
+        this.parties[2].y = 89.7;
+      }
     },
     {
       name: "Nieuw Sociaal Contract",
@@ -96,6 +116,11 @@ export class CompassService {
       logo: this.logoService.NSC,
       x: 40.5,
       y: 48.9,
+      visible: true,
+      reset: () => {
+        this.parties[3].x = 40.5;
+        this.parties[3].y = 48.9;
+      }
     },
     {
       name: "JA21",
@@ -103,6 +128,11 @@ export class CompassService {
       logo: this.logoService.JA21,
       x: 83.6,
       y: 89.7,
+      visible: true,
+      reset: () => {
+        this.parties[4].x = 83.6;
+        this.parties[4].y = 89.7;
+      }
     },
     {
       name: "Partij van de Arbeid/GroenLinks",
@@ -110,6 +140,11 @@ export class CompassService {
       logo: this.logoService.PVDA_GL,
       x: 17.7,
       y: 12.1,
+      visible: true,
+      reset: () => {
+        this.parties[5].x = 17.7;
+        this.parties[5].y = 12.1;
+      }
     },
     {
       name: "DENK",
@@ -117,6 +152,11 @@ export class CompassService {
       logo: this.logoService.DENK,
       x: 10.9,
       y: 29.2,
+      visible: true,
+      reset: () => {
+        this.parties[6].x = 10.9;
+        this.parties[6].y = 29.2;
+      }
     },
     {
       name: "Forum voor Democratie",
@@ -124,6 +164,11 @@ export class CompassService {
       logo: this.logoService.FVD,
       x: 76.8,
       y: 91.1,
+      visible: true,
+      reset: () => {
+        this.parties[7].x = 76.8;
+        this.parties[7].y = 91.1;
+      }
     },
     {
       name: "Partij Voor de Vrijheid",
@@ -131,6 +176,11 @@ export class CompassService {
       logo: this.logoService.PVV,
       x: 49.5,
       y: 81.8,
+      visible: true,
+      reset: () => {
+        this.parties[8].x = 49.5;
+        this.parties[8].y = 81.8;
+      }
     },
     {
       name: "BIJ1",
@@ -138,56 +188,99 @@ export class CompassService {
       logo: this.logoService.BIJ1,
       x: -2.7,
       y: -1.1,
+      visible: true,
+      reset: () => {
+        this.parties[9].x = -2.7;
+        this.parties[9].y = -1.1;
+      }
     }, {
       name: "Christen-Democratisch Appèl",
       abbr: "CDA",
       logo: this.logoService.CDA,
       x: 56.4,
       y: 56.8,
+      visible: true,
+      reset: () => {
+        this.parties[10].x = 56.4;
+        this.parties[10].y = 56.8;
+      }
     }, {
       name: "Volt",
       abbr: "Volt",
       logo: this.logoService.VOLT,
       x: 38.2,
       y: 2.9,
+      visible: true,
+      reset: () => {
+        this.parties[11].x = 38.2;
+        this.parties[11].y = 2.9;
+      }
     }, {
       name: "Socialistische Partij",
       abbr: "SP",
       logo: this.logoService.SP,
       x: 6.4,
       y: 34.5,
+      visible: true,
+      reset: () => {
+        this.parties[12].x = 6.4;
+        this.parties[12].y = 34.5;
+      }
     }, {
       name: "Staatkundig Gereformeerde Partij",
       abbr: "SGP",
       logo: this.logoService.SGP,
       x: 58.6,
       y: 66.1,
+      visible: true,
+      reset: () => {
+        this.parties[13].x = 58.6;
+        this.parties[13].y = 66.1;
+      }
     }, {
       name: "Volkspartij voor Vrijheid en Democratie",
       abbr: "VVD",
       logo: this.logoService.VVD,
       x: 70,
       y: 60.8,
+      visible: true,
+      reset: () => {
+        this.parties[14].x = 70;
+        this.parties[14].y = 60.8;
+      }
     }, {
       name: "Democraten '66",
       abbr: "D66",
       logo: this.logoService.D66,
       x: 42.7,
       y: 16.1,
+      visible: true,
+      reset: () => {
+        this.parties[15].x = 42.7;
+        this.parties[15].y = 16.1;
+      }
     }, {
       name: "50PLUS",
       abbr: "50PLUS",
       logo: this.logoService.P50PLUS,
       x: 33.6,
       y: 46.3,
+      visible: true,
+      reset: () => {
+        this.parties[16].x = 33.6;
+        this.parties[16].y = 46.3;
+      }
     }, {
       name: "Partij voor de Dieren",
       abbr: "PvdD",
       logo: this.logoService.PVDD,
       x: -2.7,
       y: 4.2,
+      visible: true,
+      reset: () => {
+        this.parties[17].x = -2.7;
+        this.parties[17].y = 4.2;
+      }
     },
-
   ]
-
 }
