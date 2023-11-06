@@ -26,6 +26,7 @@ import { SliderModule } from 'primeng/slider';
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { InputSwitchModule } from 'primeng/inputswitch';
+import { ColorPickerModule } from 'primeng/colorpicker';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { InputSwitchModule } from 'primeng/inputswitch';
     InputTextModule,
     ButtonModule,
     InputSwitchModule,
+    ColorPickerModule,
   ],
   providers: [CompassService],
   bootstrap: [AppComponent]

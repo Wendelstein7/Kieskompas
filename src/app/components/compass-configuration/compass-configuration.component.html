@@ -50,6 +50,32 @@
     </span>
 </div>
 
+<div class="flex flex-row justify-content-between">
+    <div class="field">
+        <label for="backgroundColour">Achtergrondkleur</label>
+        <div>
+            <p-colorPicker id="backgroundColour" class="mr-2"
+                [(ngModel)]="compassService.backgroundColor"></p-colorPicker>
+            <span>{{ compassService.backgroundColor }}</span>
+        </div>
+    </div>
+    <div class="field">
+        <label for="backgroundColour">Lijnkleur</label>
+        <div>
+            <p-colorPicker id="backgroundColour" class="mr-2" [(ngModel)]="compassService.lineColor"></p-colorPicker>
+            <span>{{ compassService.lineColor }}</span>
+        </div>
+    </div>
+    <div class="field">
+        <label for="backgroundColour">Tekstkleur</label>
+        <div>
+            <p-colorPicker id="backgroundColour" class="mr-2" [(ngModel)]="compassService.textColor"></p-colorPicker>
+            <span>{{ compassService.textColor }}</span>
+        </div>
+    </div>
+</div>
+
+
 <div class="flex flex-row justify-content-end">
     <p-button label="Reset" [outlined]="true" (onClick)="compassService.resetCompass()"></p-button>
 </div>

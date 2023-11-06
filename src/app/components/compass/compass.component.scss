@@ -1,0 +1,13 @@
+.CompassParty__icon {
+    border-radius: 100%;
+    overflow: visible;
+}
+
+.CompassParty__shadow {
+    box-shadow: 0 0.125rem 0.5rem 0 rgba(0, 0, 0, .1);
+}
+
+.CompassParty__background {
+    position: relative;
+    z-index: -1;
+}
