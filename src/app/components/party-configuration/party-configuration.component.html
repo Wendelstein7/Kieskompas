@@ -1,17 +1,18 @@
-<p-dataView #dv [value]="compassService.parties" [rows]="6" [paginator]="true">
+<p-dataView #dv [value]="compassService.parties" [rows]="6" [paginator]="true" [showFirstLastIcon]="false">
 
     <ng-template let-party pTemplate="listItem">
         <div class="col-12 m-1">
             <div class="grid">
                 <div class="col-fixed flex align-items-center">
-                    <img [src]="party.logo" alt="Logo" class="border-circle w-3rem block">
+                    <img [src]="partyInformationService.logos[party.abbr]" alt="Logo"
+                        class="border-circle w-3rem block">
                 </div>
                 <div class="col-4 flex-row justify-content-center hidden md:block">
                     <p class="font-bold overflow-hidden text-overflow-ellipsis white-space-nowrap">
-                        {{party.name}}
+                        {{ partyInformationService.names[party.abbr] }}
                     </p>
                     <p class="font-italic overflow-hidden text-overflow-ellipsis white-space-nowrap">
-                        {{party.abbr}}
+                        {{ party.abbr }}
                     </p>
                 </div>
                 <div class="col flex align-items-center">
@@ -19,12 +20,12 @@
                         <div class="flex align-items-center gap-2">
                             <label class="" for="yAxisPos"><span class="pi pi-arrows-h"></span></label>
                             <p-slider class="flex-grow-1" [(ngModel)]="party.x" [disabled]="!party.visible" [min]="-5"
-                                [max]="95" [step]="0.5" [animate]="true"></p-slider>
+                                [max]="95" [step]="0.1" [animate]="true"></p-slider>
                         </div>
                         <div class="flex align-items-center gap-2">
                             <label for="yAxisPos"><span class="pi pi-arrows-v"></span></label>
                             <p-slider class="flex-grow-1" [(ngModel)]="party.y" [disabled]="!party.visible" [min]="-5"
-                                [max]="95" [step]="0.5" [animate]="true"></p-slider>
+                                [max]="95" [step]="0.1" [animate]="true"></p-slider>
                         </div>
                     </div>
                 </div>

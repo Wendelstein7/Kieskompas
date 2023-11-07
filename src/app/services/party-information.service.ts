@@ -5,9 +5,30 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class LogoService {
+export class PartyInformationService {
 
   constructor() { }
+
+  public names: { [key: string]: string } = {
+    "BBB": "BoerBurgerBeweging",
+    "CU": "ChristenUnie",
+    "BVNL": "Belang van Nederland",
+    "NSC": "Nieuw Sociaal Contract",
+    "JA21": "JA21",
+    "PvdA/GL": "Partij van de Arbeid/GroenLinks",
+    "DENK": "DENK",
+    "FvD": "Forum voor Democratie",
+    "PVV": "Partij Voor de Vrijheid",
+    "BIJ1": "BIJ1",
+    "CDA": "Christen-Democratisch Appèl",
+    "Volt": "Volt",
+    "SP": "Socialistische Partij",
+    "SGP": "Staatkundig Gereformeerde Partij",
+    "VVD": "Volkspartij voor Vrijheid en Democratie",
+    "D66": "Democraten '66",
+    "50PLUS": "50PLUS",
+    "PvdD": "Partij voor de Dieren",
+  }
 
   public logos: { [key: string]: string } = {
 

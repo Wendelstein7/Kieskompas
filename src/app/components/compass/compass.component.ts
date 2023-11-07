@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CompassService } from 'src/app/services/compass.service';
-import { LogoService } from 'src/app/services/logo.service';
+import { PartyInformationService } from 'src/app/services/party-information.service';
 
 @Component({
   selector: 'app-compass',
@@ -10,6 +10,6 @@ import { LogoService } from 'src/app/services/logo.service';
 export class CompassComponent {
   constructor(
     protected compassService: CompassService,
-    protected logoService: LogoService,
+    protected partyInformationService: PartyInformationService,
   ) { }
 }
