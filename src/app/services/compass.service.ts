@@ -57,7 +57,6 @@ export class CompassService {
 
   private randomLabels: string[][] = [['Links', 'Rechts'], ['Progressief', 'Conservatief'], ['Intelligent', 'Niet-intelligent'], ['Rijk', 'Arm'], ['Charmant', 'Oncharmant'], ['Pro-auto', 'Pro-fiets'], ['Religieus', 'Seculair'], ['Saai', 'Interresant'], ['Winnaar', 'Loser']];
   public randomizeCompass() {
-
     this.xAxisPos = Math.floor(Math.random() * 100);
     let labels = this.randomLabels[Math.floor(Math.random() * this.randomLabels.length)];
     if (Math.random() > 0.5) labels = labels.reverse();
@@ -74,6 +73,34 @@ export class CompassService {
     // this.textColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
     // this.lineColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
   }
+  public randomizeCompassWithAnimation() {
+    let xTarget = Math.floor(Math.random() * 100);
+    let yTarget = Math.floor(Math.random() * 100);
+    let xStep = (xTarget - this.xAxisPos) / 50;
+    let yStep = (yTarget - this.yAxisPos) / 50;
+
+    let interval = setInterval(() => {
+      this.xAxisPos += xStep;
+      this.yAxisPos += yStep;
+    }, 5);
+
+    setTimeout(() => {
+      clearInterval(interval);
+      this.xAxisPos = xTarget;
+      this.yAxisPos = yTarget;
+    }, 250);
+
+    let labels = this.randomLabels[Math.floor(Math.random() * this.randomLabels.length)];
+    if (Math.random() > 0.5) labels = labels.reverse();
+    this.LeftLabel = labels[0];
+    this.RightLabel = labels[1];
+
+    labels = this.randomLabels[Math.floor(Math.random() * this.randomLabels.length)];
+    if (Math.random() > 0.5) labels = labels.reverse();
+    this.TopLabel = labels[0];
+    this.BottomLabel = labels[1];
+  }
+
 
   /* Pin */
   public pin: boolean = true;
@@ -95,8 +122,27 @@ export class CompassService {
   public randomizePin() {
     this.pinX = Math.floor(Math.random() * 100);
     this.pinY = Math.floor(Math.random() * 100);
+
     // this.pinFlairColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
   }
+  public randomizePinWithAnimation() {
+    let xTarget = Math.floor(Math.random() * 100);
+    let yTarget = Math.floor(Math.random() * 100);
+    let xStep = (xTarget - this.pinX) / 50;
+    let yStep = (yTarget - this.pinY) / 50;
+
+    let interval = setInterval(() => {
+      this.pinX += xStep;
+      this.pinY += yStep;
+    }, 5);
+
+    setTimeout(() => {
+      clearInterval(interval);
+      this.pinX = xTarget;
+      this.pinY = yTarget;
+    }, 250);
+  }
+
 
   /* Parties */
   public parties: Party[] = [
