@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { PartyInformationService } from './party-information.service';
-import { visitAll } from '@angular/compiler';
 
 export interface Party {
   abbr: string;
