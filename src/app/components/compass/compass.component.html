@@ -1,20 +1,24 @@
 <svg [ngStyle]="{ 'background-color': compassService.compass.backgroundColor }" xmlns="http://www.w3.org/2000/svg"
     version="1.1" viewBox="0 0 1000 1000">
     <text *ngIf="compassService.compass.yAxis" font-family="Helvetica, Arial, sans-serif" font-size="28"
-        letter-spacing="2" text-anchor="middle" x="500" y="30" [attr.fill]="compassService.compass.textColor">
+        letter-spacing="2" text-anchor="middle" [attr.x]="this.map(compassService.compass.yAxisPos, 0, 100, 100, 900)"
+        y="30" [attr.fill]="compassService.compass.textColor">
         {{ compassService.compass.TopLabel }}
     </text>
     <text *ngIf="compassService.compass.yAxis" font-family="Helvetica, Arial, sans-serif" font-size="28"
-        letter-spacing="2" text-anchor="middle" x="500" y="980" [attr.fill]="compassService.compass.textColor">
+        letter-spacing="2" text-anchor="middle" [attr.x]="this.map(compassService.compass.yAxisPos, 0, 100, 100, 900)"
+        y="980" [attr.fill]="compassService.compass.textColor">
         {{ compassService.compass.BottomLabel }}
     </text>
     <text *ngIf="compassService.compass.xAxis" font-family="Helvetica, Arial, sans-serif" font-size="28"
-        letter-spacing="2" text-anchor="middle" transform="rotate(-90 500 500)" x="500" y="30"
+        letter-spacing="2" text-anchor="middle" transform="rotate(270 500 500)"
+        [attr.x]="this.map(compassService.compass.xAxisPos, 0, 100, 900, 100)" y="30"
         [attr.fill]="compassService.compass.textColor">
         {{ compassService.compass.LeftLabel }}
     </text>
     <text *ngIf="compassService.compass.xAxis" font-family="Helvetica, Arial, sans-serif" font-size="28"
-        letter-spacing="2" text-anchor="middle" transform="rotate(90 500 500)" x="500" y="30"
+        letter-spacing="2" text-anchor="middle" transform="rotate(90 500 500)"
+        [attr.x]="this.map(compassService.compass.xAxisPos, 0, 100, 100, 900)" y="30"
         [attr.fill]="compassService.compass.textColor">
         {{ compassService.compass.RightLabel }}
     </text>
