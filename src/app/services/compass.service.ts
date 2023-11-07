@@ -55,7 +55,27 @@ export class CompassService {
     this.lineColor = "#999999";
   }
 
-  private randomLabels: string[][] = [['Links', 'Rechts'], ['Progressief', 'Conservatief'], ['Intelligent', 'Niet-intelligent'], ['Rijk', 'Arm'], ['Charmant', 'Oncharmant'], ['Pro-auto', 'Pro-fiets'], ['Religieus', 'Seculair'], ['Saai', 'Interresant'], ['Winnaar', 'Loser']];
+  private randomLabels: string[][] = [
+    ['Links', 'Rechts'],
+    ['Progressief', 'Conservatief'],
+    ['Intelligent', 'Niet-intelligent'],
+    ['Rijk', 'Arm'],
+    ['Charmant', 'Oncharmant'],
+    ['Pro-auto', 'Pro-fiets'],
+    ['Religieus', 'Seculier'],
+    ['Saai', 'Interresant'],
+    ['Winnaar', 'Loser'],
+    ['Vooruitstrevend', 'Traditioneel'],
+    ['Groot', 'Klein'],
+    ['Veganistisch', 'Carnivoristisch'],
+    ['Digitaal', 'Analoog'],
+    ['Oplossend', 'Ontwijkend'],
+    ['Langetermijngericht', 'Kortetermijngericht'],
+    ['Complex', 'Simpel'],
+    ['Consistent', 'Wispelturig'],
+    ['Theoretisch', 'Praktisch'],
+  ];
+
   public randomizeCompass() {
     this.xAxisPos = Math.floor(Math.random() * 100);
     let labels = this.randomLabels[Math.floor(Math.random() * this.randomLabels.length)];
