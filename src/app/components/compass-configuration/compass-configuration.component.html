@@ -1,53 +1,73 @@
-<p class="mt-0 mb-4">Hier kun je de weergave van het kompas aanpassen, zoals de assen en labels.</p>
+<p class="mt-0 mb-4">Hier kun je de weergave van het kompas aanpassen, zoals de assen, labels en de naam.</p>
+
+<div class="field">
+    <span class="p-input-icon-left w-full">
+        <i class="pi pi-comment"></i>
+        <input pInputText [(ngModel)]="compassService.compass.name" id="name" type="text" placeholder="Mijn kompas"
+            class="w-full" />
+    </span>
+</div>
+
 
 <div class="flex flex-row gap-3">
-    <p-inputSwitch [(ngModel)]="compassService.xAxis"></p-inputSwitch>
+    <p-inputSwitch [(ngModel)]="compassService.compass.xAxis"></p-inputSwitch>
     <div class="field flex-grow-1">
         <label for="xAxisPos">Horizontale lijn</label>
-        <p-slider [(ngModel)]="compassService.xAxisPos" [animate]="true" [disabled]="!compassService.xAxis"
-            id="xAxisPos" [min]="0" [step]="0.5" [max]="100"></p-slider>
+        <p-slider [(ngModel)]="compassService.compass.xAxisPos" [animate]="true"
+            [disabled]="!compassService.compass.xAxis" id="xAxisPos" [min]="0" [step]="0.5" [max]="100"></p-slider>
     </div>
 </div>
 
 <div class="flex flex-row gap-3">
-    <p-inputSwitch [(ngModel)]="compassService.yAxis"></p-inputSwitch>
+    <p-inputSwitch [(ngModel)]="compassService.compass.yAxis"></p-inputSwitch>
     <div class="field flex-grow-1">
         <label for="yAxisPos">Verticale lijn</label>
-        <p-slider [(ngModel)]="compassService.yAxisPos" [animate]="true" [disabled]="!compassService.yAxis"
-            id="yAxisPos" [min]="0" [step]="0.5" [max]="100"></p-slider>
+        <p-slider [(ngModel)]="compassService.compass.yAxisPos" [animate]="true"
+            [disabled]="!compassService.compass.yAxis" id="yAxisPos" [min]="0" [step]="0.5" [max]="100"></p-slider>
     </div>
 </div>
 
-<div class="field">
-    <span class="p-input-icon-left">
-        <i class="pi pi-chevron-up"></i>
-        <input pInputText [(ngModel)]="compassService.TopLabel" [disabled]="!compassService.yAxis" id="topLabel"
-            type="text" placeholder="Boven" />
-    </span>
-</div>
 
-<div class="field">
-    <span class="p-input-icon-left">
-        <i class="pi pi-chevron-down"></i>
-        <input pInputText [(ngModel)]="compassService.BottomLabel" [disabled]="!compassService.yAxis" id="bottomLabel"
-            type="text" placeholder="Onder" />
-    </span>
-</div>
+<div class="grid">
+    <div class="col-12 lg:col-6">
+        <div class="field">
+            <span class="p-input-icon-left w-full">
+                <i class="pi pi-chevron-left"></i>
+                <input pInputText [(ngModel)]="compassService.compass.LeftLabel"
+                    [disabled]="!compassService.compass.xAxis" id="leftLabel" type="text" placeholder="Links"
+                    class="w-full" />
+            </span>
+        </div>
 
-<div class="field">
-    <span class="p-input-icon-left">
-        <i class="pi pi-chevron-left"></i>
-        <input pInputText [(ngModel)]="compassService.LeftLabel" [disabled]="!compassService.xAxis" id="leftLabel"
-            type="text" placeholder="Links" />
-    </span>
-</div>
+        <div class="field">
+            <span class="p-input-icon-left w-full">
+                <i class="pi pi-chevron-right"></i>
+                <input pInputText [(ngModel)]="compassService.compass.RightLabel"
+                    [disabled]="!compassService.compass.xAxis" id="rightLabel" type="text" placeholder="Rechts"
+                    class="w-full" />
+            </span>
+        </div>
+    </div>
 
-<div class="field">
-    <span class="p-input-icon-left">
-        <i class="pi pi-chevron-right"></i>
-        <input pInputText [(ngModel)]="compassService.RightLabel" [disabled]="!compassService.xAxis" id="rightLabel"
-            type="text" placeholder="Rechts" />
-    </span>
+    <div class="col-12 lg:col-6">
+        <div class="field">
+            <span class="p-input-icon-left w-full">
+                <i class="pi pi-chevron-up"></i>
+                <input pInputText [(ngModel)]="compassService.compass.TopLabel"
+                    [disabled]="!compassService.compass.yAxis" id="topLabel" type="text" placeholder="Boven"
+                    class="w-full" />
+            </span>
+        </div>
+
+        <div class="field">
+            <span class="p-input-icon-left w-full">
+                <i class="pi pi-chevron-down"></i>
+                <input pInputText [(ngModel)]="compassService.compass.BottomLabel"
+                    [disabled]="!compassService.compass.yAxis" id="bottomLabel" type="text" placeholder="Onder"
+                    class="w-full" />
+            </span>
+        </div>
+    </div>
 </div>
 
 <div class="flex flex-row justify-content-between">
@@ -55,29 +75,32 @@
         <label for="backgroundColour">Achtergrondkleur</label>
         <div>
             <p-colorPicker id="backgroundColour" class="mr-2"
-                [(ngModel)]="compassService.backgroundColor"></p-colorPicker>
-            <span class="monospaced">{{ compassService.backgroundColor }}</span>
+                [(ngModel)]="compassService.compass.backgroundColor"></p-colorPicker>
+            <span class="monospaced">{{ compassService.compass.backgroundColor }}</span>
         </div>
     </div>
     <div class="field">
         <label for="backgroundColour">Lijnkleur</label>
         <div>
-            <p-colorPicker id="backgroundColour" class="mr-2" [(ngModel)]="compassService.lineColor"></p-colorPicker>
-            <span class="monospaced">{{ compassService.lineColor }}</span>
+            <p-colorPicker id="backgroundColour" class="mr-2"
+                [(ngModel)]="compassService.compass.lineColor"></p-colorPicker>
+            <span class="monospaced">{{ compassService.compass.lineColor }}</span>
         </div>
     </div>
     <div class="field">
         <label for="backgroundColour">Tekstkleur</label>
         <div>
-            <p-colorPicker id="backgroundColour" class="mr-2" [(ngModel)]="compassService.textColor"></p-colorPicker>
-            <span class="monospaced">{{ compassService.textColor }}</span>
+            <p-colorPicker id="backgroundColour" class="mr-2"
+                [(ngModel)]="compassService.compass.textColor"></p-colorPicker>
+            <span class="monospaced">{{ compassService.compass.textColor }}</span>
         </div>
     </div>
 </div>
 
 
 <div class="flex flex-row justify-content-end gap-2">
-    <p-button label="Random" icon="pi pi-arrows-alt" [outlined]="true"
-        (onClick)="compassService.randomizeCompassWithAnimation()"></p-button>
-    <p-button label="Reset" icon="pi pi-refresh" [outlined]="true" (onClick)="compassService.resetCompass()"></p-button>
+    <p-button size="small" label="Random" icon="pi pi-arrows-alt" [outlined]="true"
+        (onClick)="randomService.randomizeCompassWithAnimation()"></p-button>
+    <p-button size="small" label="Reset" icon="pi pi-refresh" [outlined]="true"
+        (onClick)="compassService.resetCompass()"></p-button>
 </div>

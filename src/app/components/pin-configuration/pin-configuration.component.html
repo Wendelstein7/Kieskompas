@@ -2,41 +2,42 @@
 
 
 <div class="field flex flex-row gap-3">
-    <p-inputSwitch [(ngModel)]="compassService.pin"></p-inputSwitch>
+    <p-inputSwitch [(ngModel)]="compassService.pin.pin"></p-inputSwitch>
     <p>Pin zichtbaar</p>
 </div>
 
 <div class="field flex flex-row gap-3">
-    <p-inputSwitch [(ngModel)]="compassService.pinFlair"></p-inputSwitch>
+    <p-inputSwitch [(ngModel)]="compassService.pin.pinFlair"></p-inputSwitch>
     <p>Pin-cirkels zichtbaar</p>
 </div>
 
 
 <div class="field flex-grow-1">
     <label for="pinX">Horizontale positie</label>
-    <p-slider [(ngModel)]="compassService.pinX" [animate]="true"
-        [disabled]="!compassService.pin && !compassService.pinFlair" id="pinX" [min]="0" [step]="0.5"
+    <p-slider [(ngModel)]="compassService.pin.pinX" [animate]="true"
+        [disabled]="!compassService.pin.pin && !compassService.pin.pinFlair" id="pinX" [min]="0" [step]="0.5"
         [max]="100"></p-slider>
 </div>
 
 <div class="field flex-grow-1">
     <label for="pinY">Verticale positie</label>
-    <p-slider [(ngModel)]="compassService.pinY" [animate]="true"
-        [disabled]="!compassService.pin && !compassService.pinFlair" id="pinY" [min]="0" [step]="0.5"
+    <p-slider [(ngModel)]="compassService.pin.pinY" [animate]="true"
+        [disabled]="!compassService.pin.pin && !compassService.pin.pinFlair" id="pinY" [min]="0" [step]="0.5"
         [max]="100"></p-slider>
 </div>
 
 <div class="field">
     <label for="flairColour">Cirkelkleur</label>
     <div>
-        <p-colorPicker id="flairColour" class="mr-2" [(ngModel)]="compassService.pinFlairColor"></p-colorPicker>
-        <span class="monospaced">{{ compassService.pinFlairColor }}</span>
+        <p-colorPicker id="flairColour" class="mr-2" [(ngModel)]="compassService.pin.pinFlairColor"></p-colorPicker>
+        <span class="monospaced">{{ compassService.pin.pinFlairColor }}</span>
     </div>
 </div>
 
 
 <div class="flex flex-row justify-content-end gap-2">
-    <p-button label="Random" icon="pi pi-arrows-alt" [outlined]="true"
-        (onClick)="compassService.randomizePinWithAnimation()"></p-button>
-    <p-button label="Reset" icon="pi pi-refresh" [outlined]="true" (onClick)="compassService.resetPin()"></p-button>
+    <p-button size="small" label="Random" icon="pi pi-arrows-alt" [outlined]="true"
+        (onClick)="randomService.randomizePinWithAnimation()"></p-button>
+    <p-button size="small" label="Reset" icon="pi pi-refresh" [outlined]="true"
+        (onClick)="compassService.resetPin()"></p-button>
 </div>

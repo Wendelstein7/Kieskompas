@@ -30,6 +30,7 @@ import { ColorPickerModule } from 'primeng/colorpicker';
 import { DataViewModule } from 'primeng/dataview';
 import { ImageModule } from 'primeng/image';
 import { DropdownModule } from 'primeng/dropdown';
+import { PanelModule } from 'primeng/panel';
 
 @NgModule({
   declarations: [
@@ -56,6 +57,7 @@ import { DropdownModule } from 'primeng/dropdown';
     DataViewModule,
     ImageModule,
     DropdownModule,
+    PanelModule,
   ],
   providers: [CompassService],
   bootstrap: [AppComponent]

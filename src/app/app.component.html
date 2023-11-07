@@ -15,7 +15,26 @@
 
         <div class="col-12 lg:col-6">
 
-          <app-compass />
+          <p-panel>
+            <ng-template pTemplate="header">
+              <div class="flex align-items-center justify-content-between w-full">
+                <h2 class="m-0 ml-2 primary-900">
+                  {{ compassService.compass.name }}
+                </h2>
+                <span class="flex gap-2">
+                  <p-button size="small" size="small" [label]="!copied ? 'Delen' : 'Gekopiëerd'"
+                    [icon]=" !copied ? 'pi pi-share-alt' : 'pi pi-check'" [severity]="!copied ? 'primary' : 'success'"
+                    [outlined]="true" (onClick)="this.shareButtonClicked()"></p-button>
+                  <p-button size="small" size="small" icon="pi pi-refresh" [outlined]="true"
+                    (onClick)="compassService.resetAll()"></p-button>
+                </span>
+              </div>
+            </ng-template>
+
+            <app-compass />
+
+          </p-panel>
+
 
         </div>
 
@@ -24,6 +43,7 @@
             <p-accordionTab>
               <ng-template pTemplate="header">
                 <div class="flex align-items-center">
+
                   <i class="pi pi-compass mr-2 primary-600"></i>
                   <span class="vertical-align-middle">Kieskompas</span>
                 </div>
